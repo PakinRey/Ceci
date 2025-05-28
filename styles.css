@@ -20,7 +20,7 @@ padding: 0 1rem; /* Espaciado para pequeños dispositivos */
     font-size: 2rem;
     font-weight: 300;
     font-family: "Pacifico", serif;
-    color: #021f53;
+    color: #01102E; /* Adjusted for better contrast from #021f53 */
     text-shadow: 0 0 10px white, 0 0 5px lightblue;
     position: relative;
     text-align: center;
@@ -48,8 +48,8 @@ animation: heartbeat 1.5s infinite;
     transform: scale(1);
 }
 }
-/* Ajustes específicos para iPhone 13 Pro Max (430px de ancho) */
-@media screen and (max-width: 430px) and (min-height: 900px) {
+/* Ajustes para pantallas pequeñas (móviles en vertical) */
+@media screen and (max-width: 480px) {
 body {
 background-attachment: scroll;
 }
@@ -102,7 +102,12 @@ box-shadow: 0 0 10px #ff6699, 0 0 0px #d020f3;;
 button:hover {
 color: white;
 background-color: rgb(251,157,251);
-}   
+}
+button:focus {
+    box-shadow: 0 0 8px 3px #FF69B4, 0 0 15px #FFC0CB; /* Hot pink + lighter pink glow */
+    outline: 2px solid #FF69B4; /* Fallback and extra emphasis */
+    outline-offset: 1px;
+}
 .btn-si {
 background-color: #29035c;
 }

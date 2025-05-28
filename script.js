@@ -93,7 +93,7 @@ const collage = document.querySelector('.collage');
 imagenesLocales.forEach((src, index) => {
   const img = document.createElement('img');
   img.src = src;
-  img.alt = `Imagen ${index + 1}`;
+  img.alt = `Memory image ${index + 1} from our moments together`;
   img.style.setProperty('--rotation', Math.random().toFixed(3));
   collage.appendChild(img);
 });
@@ -155,8 +155,8 @@ function apareceImagenTriste() {
 
 
   // Configura la URL de la imagen y otros atributos
-  img.src = 'https://scontent.fmex31-1.fna.fbcdn.net/v/t39.30808-6/473666678_1175850374113711_5723368937854661212_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHO3YZmGJN6Vnj2HNbNnUI5iT6af46Y5eiJPpp_jpjl6Gr1YDlTy4F-r2zcmavfD21EbCGaWUCmSd0iH9TUiMq_&_nc_ohc=EZ1IrDUnqAQQ7kNvgFgsgZR&_nc_oc=Adj4qfucDV1NcLMu6D7ICRQgQTqj_fePN7gbL6i__iOOvzdODqL7tJ1czLoOJYnuv4U&_nc_zt=23&_nc_ht=scontent.fmex31-1.fna&_nc_gid=Ad6HdhIjE-S0N8suQT3YzYL&oh=00_AYC4hczp7wMZyr1JVrnMv7oX9XTLWMWnteUjAJSJ_bau5A&oe=67B58080'; // Reemplaza con tu URL
-  img.alt = 'Imagen Triste'; // Texto alternativo para accesibilidad
+  img.src = './img/sad-cat.jpg'; // Use local image path
+  img.alt = 'Image conveying sadness'; // Updated alt text
   img.classList.add('imagen-clase'); // Opcional: añade una clase para estilos
   img.style.width = '350px'; // Ajusta el tamaño si es necesario
   img.style.height = 'auto'; // Mantén las proporciones
@@ -165,6 +165,6 @@ function apareceImagenTriste() {
   contenedor.appendChild(img);
 
   // Asegúrate de mostrar el contenedor si estaba oculto
-  contenedor.classList.remove('d-none');
+  // contenedor.classList.remove('d-none'); // Redundant, already called above
 
  }
