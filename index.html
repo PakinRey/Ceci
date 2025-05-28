@@ -10,33 +10,35 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&family=DynaPuff:wght@400..700&family=Pacifico&family=Rubik+Vinyl&display=swap" rel="stylesheet">
     <body>
-        <div class="rose">
+    <main>
+        <section id="initial-greeting" class="rose">
             <div class="Contenido">
-                <p class="text"></p>
-                <img src="./img/10.png" alt="Imagen" class="imagen-bonita">
+                <p class="text" aria-live="polite" aria-atomic="true"></p>
+                <img src="./img/10.png" alt="Illustration of a rose and a love letter" class="imagen-bonita">
             </div>
 
             
-        </div>
-        <div class="collage-container d-none">
+        </section>
+        <section id="collage-reveal" class="collage-container d-none">
             <div class="collage">
             <!-- Las imágenes serán generadas dinámicamente -->
             </div>
-            <img id="imagen-carrusel" src="ruta-de-imagen-1.jpg" alt="Imagen" />
+            <img id="imagen-carrusel" src="ruta-de-imagen-1.jpg" alt="Placeholder image for photo collage" />
             <div class="top-text">
                 <p class="text-final">¿Apoco no soy el mas afortunado? 😊</p>
             </div>
-        </div>
-        <div class="center-text propuesta d-none">
+        </section>
+        <section id="proposal" class="center-text propuesta d-none">
             <p class="text-final">¿Quieres ser esa persona que pueda decir ¡Te amo! ?
                 <span>(Novios pues)</span>💞</p>
             <button class="btn-si" onclick="guardarSeleccion('SI')">SI 💞</button>
             <button class="btn-no" onclick="guardarSeleccion('NO')">No</button>
-        </div>
-        <div class="imagen-triste d-none">
-            <h3 class="text-final">Te Amo 💞</h3>
+        </section>
+        <section id="final-message" class="imagen-triste d-none">
+            <h3 class="text-final">Entiendo. Gracias por tu honestidad. 😊</h3>
             
-        </div>
+        </section>
+    </main>
         
 
     <script src="script.js"></script>
