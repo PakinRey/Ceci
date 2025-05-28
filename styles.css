@@ -58,8 +58,9 @@ background-attachment: scroll;
     padding: 1rem; /* Espaciado adicional para evitar saturación */
 }
 .collage img {
-    width: 120px; /* Tamaño más pequeño para acomodar varias imágenes */
+    width: 90px;  /* Further reduce image width */
     margin: 5px; /* Reducir márgenes para maximizar el espacio */
+    border: 5px solid white; /* Reduce border for mobile */
 }
 .center-text .text-final {
     font-size: 2.5rem; /* Tamaño ajustado para no desbordar */
@@ -67,7 +68,34 @@ background-attachment: scroll;
 .collage-container {
     width: 95%; /* Usar más espacio disponible */
     height: 85%; /* Ajustar proporcionalmente */
+    /* overflow: hidden; is already set globally, which is good */
 }
+.collage {
+    padding: 5px; /* Add some internal padding */
+}
+
+    /* General mobile responsiveness audit adjustments */
+    .text {
+        font-size: 1.7rem; /* Further slight reduction */
+        /* padding: 1rem; is likely fine, already set */
+    }
+
+    .center-text .text-final,
+    .top-text .text-final { /* .top-text .text-final was missing mobile styles */
+        font-size: 2rem;    /* Reduce font size */
+        padding: 8px 15px;  /* Adjust padding */
+    }
+
+    button { /* General button adjustments for mobile */
+        padding: 12px 18px;
+        font-size: 14px;
+        margin: 4px 8px; /* More balanced margin for mobile */
+    }
+    /* Note: Specific margins for .btn-si, .btn-no are not added here,
+       as the general 'button' margin should apply and might be sufficient.
+       The .propuesta container uses text-align: center for its inline-block buttons,
+       which should allow them to wrap naturally.
+    */
 }
 
 /* Ajustes generales para pantallas de alta densidad (retina) */
@@ -205,4 +233,59 @@ display: block;
     bottom: 0;
     max-width: 300px;
     margin: auto;
+}
+
+/* Dark Mode Styles */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #1E1E1E; /* Dark grey */
+        /* Override the linear-gradient from light mode */
+    }
+
+    .text {
+        color: #E0E0E0; /* Light grey/off-white */
+        text-shadow: 0 0 8px rgba(220, 220, 255, 0.6), 0 0 4px rgba(173, 216, 230, 0.5); /* Softer, darker glow */
+    }
+
+    .center-text .text-final,
+    .top-text .text-final {
+        background: rgba(0, 0, 0, 0.6); /* Dark semi-transparent background */
+        color: #F0F0F0;                /* Light text color */
+        box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* Optional: subtle light shadow */
+    }
+
+    button {
+        border-color: #555; /* Darker border color for buttons */
+        /* Existing button background colors (.btn-si, .btn-no) should still work.
+           Text color is already white. Box shadow is theme-colored. */
+    }
+
+    button:hover {
+        /* General hover, can be overridden by specific button classes */
+        background-color: #444; /* Generic dark hover */
+        color: #FFF;
+    }
+    
+    .btn-si:hover {
+         background-color: #3a0078; /* Darker, less vibrant purple for SI hover */
+    }
+    .btn-no:hover {
+         background-color: #2a0058; /* Darker, less vibrant purple for NO hover */
+    }
+
+    /* The existing button:focus style with pink shadow (FF69B4) might be visually
+       acceptable. If not, it could be overridden here. For now, we assume it's okay.
+       Example override:
+       button:focus {
+           box-shadow: 0 0 8px 3px rgba(135, 206, 250, 0.7); /* Light blue glow */
+           outline-color: rgba(135, 206, 250, 0.7);
+       }
+    */
+
+    .imagen-triste h3.text-final {
+        color: #E0E0E0; /* Light grey/off-white */
+        /* This element doesn't have its own background set by default,
+           so it will inherit the body's dark background. If it did,
+           it would need adjustment here. */
+    }
 }
